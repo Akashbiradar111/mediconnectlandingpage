@@ -74,22 +74,30 @@ const floatingCards = [
 ];
 
 const primaryButtonSx = {
-  minHeight: 56,
-  px: 3,
-  borderRadius: "14px",
+  minHeight: 44,
+  px: 2.2,
+  borderRadius: "10px",
   bgcolor: colors.primary,
+  fontSize: "0.84rem",
+  fontWeight: 700,
+  textTransform: "none",
+  boxShadow: "none",
   "&:hover": {
     bgcolor: colors.primaryDark,
+    boxShadow: "none",
   },
 };
 
 const secondaryButtonSx = {
-  minHeight: 56,
-  px: 3,
-  borderRadius: "14px",
+  minHeight: 44,
+  px: 2.2,
+  borderRadius: "10px",
   borderColor: colors.primary,
   color: colors.primaryDark,
   bgcolor: colors.white,
+  fontSize: "0.84rem",
+  fontWeight: 700,
+  textTransform: "none",
   "&:hover": {
     borderColor: colors.primaryDark,
     bgcolor: colors.primaryLight,
@@ -97,14 +105,13 @@ const secondaryButtonSx = {
 };
 
 const iconBadgeSx = {
-  width: 44,
-  height: 44,
-  borderRadius: "14px",
+  width: 32,
+  height: 32,
+  borderRadius: "10px",
   display: "grid",
   placeItems: "center",
   color: colors.primary,
-  bgcolor: colors.primaryLight,
-  border: `1px solid rgba(15, 157, 138, 0.12)`,
+  bgcolor: "rgba(15, 157, 138, 0.08)",
   flexShrink: 0,
 };
 
@@ -114,27 +121,28 @@ const FloatingCard = ({ icon: Icon, title, subtitle, sx }) => (
     sx={{
       position: "absolute",
       zIndex: 3,
-      display: "flex",
       alignItems: "center",
-      gap: 1.35,
-      px: { xs: 1.5, sm: 1.8 },
-      py: 1.35,
-      minWidth: { xs: 168, sm: 186 },
-      borderRadius: "20px",
+      gap: 1,
+      px: { xs: 1.2, sm: 1.4 },
+      py: 1,
+      minWidth: { xs: 152, sm: 168 },
+      borderRadius: "14px",
       border: `1px solid ${colors.border}`,
-      boxShadow: colors.shadowSoft,
+      boxShadow: "0 10px 24px rgba(15, 23, 42, 0.08)",
       animation: "fadeUp 720ms ease both, floatCard 4s ease-in-out infinite",
+      bgcolor: colors.white,
+      display: { xs: "none", sm: "flex" },
       ...sx,
     }}
   >
-    <Box sx={{ ...iconBadgeSx, width: 38, height: 38, borderRadius: "12px" }}>
-      <Icon sx={{ fontSize: 20 }} />
+    <Box sx={iconBadgeSx}>
+      <Icon sx={{ fontSize: 18 }} />
     </Box>
     <Box>
-      <Typography sx={{ fontSize: "0.94rem", fontWeight: 800, lineHeight: 1.1 }}>
+      <Typography sx={{ fontSize: "0.8rem", fontWeight: 800, lineHeight: 1.15 }}>
         {title}
       </Typography>
-      <Typography sx={{ mt: 0.35, fontSize: "0.78rem", color: colors.textSecondary }}>
+      <Typography sx={{ mt: 0.2, fontSize: "0.68rem", color: colors.textSecondary }}>
         {subtitle}
       </Typography>
     </Box>
@@ -143,32 +151,27 @@ const FloatingCard = ({ icon: Icon, title, subtitle, sx }) => (
 
 const Hero = () => {
   return (
-    <Box component="section" sx={{ pt: { xs: 3, md: 4 }, pb: { xs: 2, md: 1 } }}>
+    <Box component="section" sx={{ pt: { xs: 2.5, md: 3.5 }, pb: { xs: 2, md: 2.5 } }}>
       <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
         <Box
           sx={{
             position: "relative",
-            overflow: "hidden",
-            borderRadius: { xs: "30px", md: "38px" },
-            px: { xs: 2.5, sm: 3.25, md: 4.5, lg: 5.5 },
-            py: { xs: 3.5, md: 4.5, lg: 5.2 },
-            border: `1px solid ${colors.border}`,
-            bgcolor: colors.white,
-            boxShadow: colors.shadow,
-            background:
-              "radial-gradient(circle at top left, rgba(15, 157, 138, 0.14), transparent 34%), linear-gradient(180deg, #ffffff 0%, #fbfffe 100%)",
+            overflow: "visible",
+            px: 0,
+            py: 0,
+            background: "transparent",
           }}
         >
           <Box
             sx={{
               position: "absolute",
-              right: { xs: -100, md: -80 },
-              top: { xs: -60, md: -90 },
-              width: { xs: 220, md: 320 },
-              height: { xs: 220, md: 320 },
+              right: { xs: -60, md: -18 },
+              top: { xs: -30, md: 24 },
+              width: { xs: 160, md: 250 },
+              height: { xs: 160, md: 250 },
               borderRadius: "50%",
-              bgcolor: "rgba(15, 157, 138, 0.08)",
-              filter: "blur(12px)",
+              bgcolor: "rgba(15, 157, 138, 0.06)",
+              filter: "blur(30px)",
             }}
           />
 
@@ -176,8 +179,8 @@ const Hero = () => {
             sx={{
               display: "grid",
               alignItems: "center",
-              gap: { xs: 5, lg: 2.5 },
-              gridTemplateColumns: { xs: "1fr", lg: "minmax(0, 1.04fr) minmax(0, 0.96fr)" },
+              gap: { xs: 4.5, lg: 1.5 },
+              gridTemplateColumns: { xs: "1fr", lg: "minmax(0, 0.96fr) minmax(0, 1.04fr)" },
             }}
           >
             <Box sx={{ position: "relative", zIndex: 2, animation: "fadeUp 700ms ease both" }}>
@@ -185,29 +188,29 @@ const Hero = () => {
                 sx={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: 1,
-                  px: 1.6,
-                  py: 1,
+                  gap: 0.7,
+                  px: 1.25,
+                  py: 0.7,
                   borderRadius: "999px",
-                  bgcolor: colors.primaryLight,
+                  bgcolor: "rgba(15, 157, 138, 0.08)",
                   border: "1px solid rgba(15, 157, 138, 0.14)",
                   color: colors.primaryDark,
-                  fontSize: "0.86rem",
+                  fontSize: "0.72rem",
                   fontWeight: 700,
                 }}
               >
-                <AutoAwesomeRoundedIcon sx={{ fontSize: 18 }} />
+                <AutoAwesomeRoundedIcon sx={{ fontSize: 15 }} />
                 AI-Powered Healthcare Ecosystem
               </Box>
 
               <Typography
                 component="h1"
                 sx={{
-                  mt: 2.6,
-                  maxWidth: 620,
-                  fontSize: { xs: "2.7rem", sm: "3.35rem", lg: "4.25rem" },
-                  lineHeight: { xs: 1.06, lg: 1.02 },
-                  letterSpacing: "-0.045em",
+                  mt: 2.1,
+                  maxWidth: 560,
+                  fontSize: { xs: "2.35rem", sm: "3.2rem", lg: "3.72rem" },
+                  lineHeight: { xs: 1.08, lg: 1.1 },
+                  letterSpacing: "-0.04em",
                   fontWeight: 800,
                   color: colors.textPrimary,
                 }}
@@ -221,10 +224,10 @@ const Hero = () => {
 
               <Typography
                 sx={{
-                  mt: 2.3,
-                  maxWidth: 600,
-                  fontSize: { xs: "1rem", md: "1.1rem" },
-                  lineHeight: 1.85,
+                  mt: 1.8,
+                  maxWidth: 500,
+                  fontSize: { xs: "0.95rem", md: "1rem" },
+                  lineHeight: 1.8,
                   color: colors.textSecondary,
                 }}
               >
@@ -235,10 +238,10 @@ const Hero = () => {
 
               <Box
                 sx={{
-                  mt: 3.2,
+                  mt: 2.6,
                   display: "flex",
                   flexWrap: "wrap",
-                  gap: 1.5,
+                  gap: 1,
                 }}
               >
                 <Button
@@ -260,9 +263,9 @@ const Hero = () => {
 
               <Box
                 sx={{
-                  mt: 4,
+                  mt: 2.8,
                   display: "grid",
-                  gap: 1.5,
+                  gap: { xs: 1.2, md: 1.5 },
                   gridTemplateColumns: {
                     xs: "repeat(2, minmax(0, 1fr))",
                     md: "repeat(4, minmax(0, 1fr))",
@@ -274,18 +277,15 @@ const Hero = () => {
                     key={title}
                     sx={{
                       display: "flex",
-                      alignItems: "flex-start",
-                      gap: 1.15,
-                      p: 0.25,
+                      alignItems: "center",
+                      gap: 0.7,
                     }}
                   >
-                    <Box sx={{ ...iconBadgeSx, width: 40, height: 40 }}>
-                      <Icon sx={{ fontSize: 20 }} />
-                    </Box>
+                    <Icon sx={{ fontSize: 18, color: colors.primary }} />
                     <Box>
                       <Typography
                         sx={{
-                          fontSize: "0.84rem",
+                          fontSize: "0.74rem",
                           fontWeight: 800,
                           lineHeight: 1.15,
                           color: colors.textPrimary,
@@ -295,8 +295,8 @@ const Hero = () => {
                       </Typography>
                       <Typography
                         sx={{
-                          mt: 0.35,
-                          fontSize: "0.75rem",
+                          mt: 0.2,
+                          fontSize: "0.68rem",
                           lineHeight: 1.45,
                           color: colors.textMuted,
                         }}
@@ -312,7 +312,7 @@ const Hero = () => {
             <Box
               sx={{
                 position: "relative",
-                minHeight: { xs: 360, sm: 420, lg: 540 },
+                minHeight: { xs: 300, sm: 380, lg: 470 },
                 display: "flex",
                 alignItems: "flex-end",
                 justifyContent: "center",
@@ -322,23 +322,23 @@ const Hero = () => {
               <Box
                 sx={{
                   position: "absolute",
-                  inset: { xs: "8% 6%", md: "6% 8%" },
-                  borderRadius: "44% 56% 42% 58% / 44% 36% 64% 56%",
+                  inset: { xs: "12% 10%", md: "10% 12%" },
+                  borderRadius: "50%",
                   background:
-                    "radial-gradient(circle at 35% 25%, rgba(15, 157, 138, 0.26), rgba(15, 157, 138, 0.10) 36%, rgba(255, 255, 255, 0) 70%)",
+                    "radial-gradient(circle at 50% 40%, rgba(15, 157, 138, 0.12), rgba(15, 157, 138, 0.04) 42%, rgba(255, 255, 255, 0) 74%)",
                 }}
               />
 
               <Box
                 sx={{
                   position: "absolute",
-                  left: "14%",
-                  right: "10%",
-                  bottom: { xs: 8, md: 14 },
-                  height: { xs: 42, md: 52 },
+                  left: "18%",
+                  right: "14%",
+                  bottom: { xs: 12, md: 18 },
+                  height: { xs: 30, md: 38 },
                   borderRadius: "999px",
-                  background: "rgba(15, 157, 138, 0.14)",
-                  filter: "blur(18px)",
+                  background: "rgba(15, 157, 138, 0.12)",
+                  filter: "blur(20px)",
                   zIndex: 1,
                 }}
               />
@@ -349,13 +349,13 @@ const Hero = () => {
                 alt="Doctor consulting an elderly patient"
                 sx={{
                   width: "100%",
-                  maxWidth: { xs: 360, sm: 430, md: 510, lg: 564 },
+                  maxWidth: { xs: 320, sm: 390, md: 470, lg: 530 },
                   height: "auto",
                   position: "relative",
                   zIndex: 2,
                   objectFit: "contain",
-                  transform: { xs: "translateY(8px)", md: "translate(12px, 10px)" },
-                  filter: "drop-shadow(0 22px 34px rgba(15, 23, 42, 0.12))",
+                  transform: { xs: "translateY(6px)", md: "translate(8px, 8px)" },
+                  filter: "drop-shadow(0 18px 28px rgba(15, 23, 42, 0.1))",
                 }}
               />
 

@@ -49,12 +49,12 @@ const serviceCards = [
 
 const ServicesSection = () => {
   return (
-    <Box component="section" sx={{ pb: { xs: 8, md: 10 } }}>
+    <Box component="section" sx={{ pb: { xs: 7, md: 8.5 } }}>
       <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
         <Typography
           sx={{
             color: colors.primaryDark,
-            fontSize: { xs: "0.78rem", md: "0.84rem" },
+            fontSize: { xs: "0.72rem", md: "0.76rem" },
             fontWeight: 800,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
@@ -66,11 +66,11 @@ const ServicesSection = () => {
         <Typography
           component="h2"
           sx={{
-            mt: 1.7,
-            maxWidth: 860,
+            mt: 1.1,
+            maxWidth: 760,
             color: colors.textPrimary,
-            fontSize: { xs: "2rem", sm: "2.55rem", lg: "3rem" },
-            lineHeight: { xs: 1.18, md: 1.14 },
+            fontSize: { xs: "1.9rem", sm: "2.3rem", lg: "2.7rem" },
+            lineHeight: { xs: 1.2, md: 1.18 },
             letterSpacing: "-0.04em",
             fontWeight: 800,
           }}
@@ -81,7 +81,6 @@ const ServicesSection = () => {
             component="span"
             sx={{
               color: colors.primaryDark,
-              fontStyle: "italic",
             }}
           >
             single platform.
@@ -90,9 +89,9 @@ const ServicesSection = () => {
 
         <Box
           sx={{
-            mt: { xs: 3.5, md: 4.5 },
+            mt: { xs: 2.8, md: 3.5 },
             display: "grid",
-            gap: { xs: 1.5, md: 2.2 },
+            gap: { xs: 1.2, md: 1.5 },
             gridTemplateColumns: {
               xs: "1fr",
               sm: "repeat(2, minmax(0, 1fr))",
@@ -105,43 +104,43 @@ const ServicesSection = () => {
               key={title}
               elevation={0}
               sx={{
-                minHeight: 220,
-                p: { xs: 2.3, md: 2.5 },
-                borderRadius: "20px",
+                minHeight: 192,
+                p: { xs: 2, md: 1.8 },
+                borderRadius: "16px",
                 border: `1px solid ${colors.border}`,
                 bgcolor: colors.white,
-                boxShadow: "0 18px 34px rgba(15, 23, 42, 0.05)",
+                boxShadow: "0 8px 18px rgba(15, 23, 42, 0.04)",
                 display: "flex",
                 flexDirection: "column",
                 transition: "transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
                 "&:hover": {
-                  transform: "translateY(-4px)",
+                  transform: "translateY(-2px)",
                   borderColor: "rgba(15, 157, 138, 0.18)",
-                  boxShadow: "0 22px 42px rgba(15, 23, 42, 0.08)",
+                  boxShadow: "0 12px 22px rgba(15, 23, 42, 0.06)",
                 },
               }}
             >
               <Box
                 sx={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: "15px",
+                  width: 40,
+                  height: 40,
+                  borderRadius: "12px",
                   display: "grid",
                   placeItems: "center",
-                  bgcolor: colors.primaryLight,
+                  bgcolor: "rgba(15, 157, 138, 0.08)",
                   color: colors.primary,
                   border: "1px solid rgba(15, 157, 138, 0.12)",
                 }}
               >
-                <Icon sx={{ fontSize: 24 }} />
+                <Icon sx={{ fontSize: 20 }} />
               </Box>
 
               <Typography
                 sx={{
-                  mt: 2.2,
+                  mt: 1.8,
                   color: colors.textPrimary,
-                  fontSize: "1.15rem",
-                  lineHeight: 1.2,
+                  fontSize: "0.95rem",
+                  lineHeight: 1.25,
                   fontWeight: 800,
                 }}
               >
@@ -150,11 +149,11 @@ const ServicesSection = () => {
 
               <Typography
                 sx={{
-                  mt: 1.1,
+                  mt: 0.8,
                   color: colors.textSecondary,
-                  fontSize: "0.85rem",
-                  lineHeight: 1.6,
-                  maxWidth: 155,
+                  fontSize: "0.76rem",
+                  lineHeight: 1.55,
+                  maxWidth: 148,
                 }}
               >
                 {description}
@@ -164,9 +163,9 @@ const ServicesSection = () => {
                 <IconButton
                   aria-label={`Open ${title}`}
                   sx={{
-                    width: 32,
-                    height: 32,
-                    bgcolor: "#F4F6F7",
+                    width: 28,
+                    height: 28,
+                    bgcolor: "#F7F9FA",
                     color: colors.textMuted,
                     "&:hover": {
                       bgcolor: colors.primaryLight,
@@ -174,7 +173,7 @@ const ServicesSection = () => {
                     },
                   }}
                 >
-                  <ChevronRightRoundedIcon sx={{ fontSize: 18 }} />
+                  <ChevronRightRoundedIcon sx={{ fontSize: 16 }} />
                 </IconButton>
               </Box>
             </Paper>

@@ -26,46 +26,48 @@ const pageWidthSx = {
 };
 
 const actionButtonSx = {
-  minHeight: 48,
-  px: 2.25,
-  borderRadius: "14px",
-  fontSize: "0.95rem",
+  minHeight: 40,
+  px: 1.8,
+  borderRadius: "10px",
+  fontSize: "0.82rem",
+  fontWeight: 700,
+  textTransform: "none",
+  boxShadow: "none",
 };
 
 const Brand = ({ compact = false }) => (
-  <Box sx={{ display: "flex", alignItems: "center", gap: 1.4 }}>
+  <Box sx={{ display: "flex", alignItems: "center", gap: compact ? 1 : 1.15 }}>
     <Box
       sx={{
         position: "relative",
-        width: compact ? 42 : 48,
-        height: compact ? 42 : 48,
-        borderRadius: compact ? "14px" : "16px",
+        width: compact ? 28 : 32,
+        height: compact ? 28 : 32,
         display: "grid",
         placeItems: "center",
-        background:
-          "linear-gradient(145deg, #32cbb5 0%, #0f9d8a 52%, #0b7167 100%)",
-        boxShadow: "0 16px 30px rgba(15, 157, 138, 0.26)",
       }}
     >
       <FavoriteRoundedIcon
-        sx={{ color: colors.white, fontSize: compact ? 24 : 28 }}
+        sx={{
+          color: colors.primary,
+          fontSize: compact ? 28 : 32,
+          filter: "drop-shadow(0 6px 12px rgba(15, 157, 138, 0.16))",
+        }}
       />
       <Box
         sx={{
           position: "absolute",
-          top: compact ? 5 : 6,
-          right: compact ? 5 : 6,
-          width: compact ? 14 : 16,
-          height: compact ? 14 : 16,
+          top: compact ? 3 : 4,
+          right: compact ? 0 : 1,
+          width: compact ? 12 : 13,
+          height: compact ? 12 : 13,
           borderRadius: "999px",
           display: "grid",
           placeItems: "center",
-          bgcolor: "rgba(255, 255, 255, 0.18)",
-          border: "1px solid rgba(255, 255, 255, 0.26)",
+          bgcolor: colors.primary,
         }}
       >
         <AddRoundedIcon
-          sx={{ color: colors.white, fontSize: compact ? 10 : 12 }}
+          sx={{ color: colors.white, fontSize: compact ? 9 : 10 }}
         />
       </Box>
     </Box>
@@ -73,10 +75,10 @@ const Brand = ({ compact = false }) => (
     <Box>
       <Typography
         sx={{
-          fontSize: compact ? "1rem" : "1.12rem",
+          fontSize: compact ? "0.98rem" : "1.02rem",
           fontWeight: 800,
           lineHeight: 1,
-          letterSpacing: "-0.02em",
+          letterSpacing: "-0.03em",
           color: colors.textPrimary,
         }}
       >
@@ -84,9 +86,9 @@ const Brand = ({ compact = false }) => (
       </Typography>
       <Typography
         sx={{
-          mt: 0.35,
-          fontSize: compact ? "0.69rem" : "0.74rem",
-          fontWeight: 600,
+          mt: 0.25,
+          fontSize: compact ? "0.59rem" : "0.62rem",
+          fontWeight: 700,
           lineHeight: 1,
           color: colors.textMuted,
         }}
@@ -111,17 +113,17 @@ const Navbar = () => {
         color="transparent"
         elevation={0}
         sx={{
-          bgcolor: "rgba(255, 255, 255, 0.92)",
-          backdropFilter: "blur(16px)",
+          bgcolor: "rgba(255, 255, 255, 0.96)",
+          backdropFilter: "blur(10px)",
           borderBottom: `1px solid ${colors.border}`,
-          boxShadow: "0 1px 0 rgba(15, 23, 42, 0.04)",
+          boxShadow: "none",
         }}
       >
         <Container maxWidth={false} sx={pageWidthSx}>
           <Toolbar
             disableGutters
             sx={{
-              minHeight: { xs: 74, md: 86 },
+              minHeight: { xs: 68, md: 72 },
               gap: 2,
               justifyContent: "space-between",
             }}
@@ -132,7 +134,7 @@ const Navbar = () => {
               sx={{
                 display: { xs: "none", lg: "flex" },
                 alignItems: "center",
-                gap: 3.25,
+                gap: 2.5,
                 flex: 1,
                 justifyContent: "center",
               }}
@@ -144,8 +146,8 @@ const Navbar = () => {
                     display: "flex",
                     alignItems: "center",
                     gap: 0.25,
-                    fontSize: "0.95rem",
-                    fontWeight: 600,
+                    fontSize: "0.82rem",
+                    fontWeight: 700,
                     color: colors.textPrimary,
                     cursor: "pointer",
                     transition: "color 180ms ease",
@@ -176,7 +178,7 @@ const Navbar = () => {
                   ...actionButtonSx,
                   borderColor: colors.border,
                   color: colors.primary,
-                  bgcolor: "#F8FCFB",
+                  bgcolor: colors.white,
                   "&:hover": {
                     borderColor: colors.primary,
                     bgcolor: colors.primaryLight,
@@ -205,10 +207,10 @@ const Navbar = () => {
               onClick={toggleDrawer}
               sx={{
                 display: { xs: "inline-flex", lg: "none" },
-                width: 46,
-                height: 46,
+                width: 40,
+                height: 40,
                 border: `1px solid ${colors.border}`,
-                borderRadius: "14px",
+                borderRadius: "10px",
                 color: colors.textPrimary,
               }}
               aria-label="Open navigation menu"
@@ -246,8 +248,8 @@ const Navbar = () => {
               key={item.label}
               sx={{
                 px: 1.5,
-                py: 1.2,
-                borderRadius: "14px",
+                py: 1.1,
+                borderRadius: "10px",
                 color: colors.textPrimary,
               }}
             >

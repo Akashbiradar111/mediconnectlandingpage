@@ -2,60 +2,65 @@ import {
   Box,
   Button,
   Container,
-  Paper,
   Typography,
 } from "@mui/material";
-import EastRoundedIcon from "@mui/icons-material/EastRounded";
+import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import LocalPharmacyOutlinedIcon from "@mui/icons-material/LocalPharmacyOutlined";
+import MedicalServicesOutlinedIcon from "@mui/icons-material/MedicalServicesOutlined";
 import PersonalInjuryOutlinedIcon from "@mui/icons-material/PersonalInjuryOutlined";
+import ScienceOutlinedIcon from "@mui/icons-material/ScienceOutlined";
+import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import colors from "../../constants/colors";
 
 const networkItems = [
   {
     title: "Patients",
     description: "Manage your health and access care",
+    icon: PersonalInjuryOutlinedIcon,
   },
   {
     title: "Doctors",
     description: "Doctor care and consultations",
+    icon: MedicalServicesOutlinedIcon,
   },
   {
     title: "Hospitals",
     description: "Streamline operations and patient care",
+    icon: LocalHospitalOutlinedIcon,
   },
   {
     title: "Laboratories",
     description: "Accurate tests and timely reports",
+    icon: ScienceOutlinedIcon,
   },
   {
     title: "Pharmacies",
     description: "Dispense and deliver medicine with ease",
+    icon: LocalPharmacyOutlinedIcon,
   },
   {
     title: "Insurance",
     description: "Simplify policies and claims",
+    icon: ShieldOutlinedIcon,
   },
 ];
 
 const ConnectedNetworkSection = () => {
   return (
-    <Box component="section" sx={{ pb: { xs: 8, md: 10 } }}>
+    <Box component="section" sx={{ pb: { xs: 6, md: 7 } }}>
       <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
-        <Paper
-          elevation={0}
+        <Box
           sx={{
-            px: { xs: 2, sm: 3, md: 4.5, lg: 5.5 },
-            py: { xs: 4.5, md: 5.5, lg: 6.5 },
-            borderRadius: { xs: "28px", md: "34px" },
-            border: `1px solid ${colors.border}`,
-            bgcolor: colors.white,
-            boxShadow: colors.shadow,
+            position: "relative",
+            px: 0,
+            py: 0,
           }}
         >
           <Typography
             sx={{
               textAlign: "center",
               color: colors.primaryDark,
-              fontSize: { xs: "0.78rem", md: "0.84rem" },
+              fontSize: { xs: "0.72rem", md: "0.76rem" },
               fontWeight: 800,
               letterSpacing: "0.04em",
               textTransform: "uppercase",
@@ -67,13 +72,13 @@ const ConnectedNetworkSection = () => {
           <Typography
             component="h2"
             sx={{
-              mt: 1.8,
+              mt: 1.1,
               mx: "auto",
-              maxWidth: 700,
+              maxWidth: 560,
               textAlign: "center",
               color: colors.textPrimary,
-              fontSize: { xs: "2rem", sm: "2.55rem", lg: "3rem" },
-              lineHeight: { xs: 1.18, md: 1.16 },
+              fontSize: { xs: "1.9rem", sm: "2.25rem", lg: "2.55rem" },
+              lineHeight: { xs: 1.2, md: 1.18 },
               letterSpacing: "-0.04em",
               fontWeight: 800,
             }}
@@ -83,13 +88,13 @@ const ConnectedNetworkSection = () => {
 
           <Typography
             sx={{
-              mt: 1.8,
+              mt: 1.2,
               mx: "auto",
-              maxWidth: 720,
+              maxWidth: 640,
               textAlign: "center",
               color: colors.textSecondary,
-              fontSize: { xs: "0.98rem", md: "1.04rem" },
-              lineHeight: 1.75,
+              fontSize: { xs: "0.88rem", md: "0.95rem" },
+              lineHeight: 1.7,
             }}
           >
             From booking to recovery, we make healthcare simple, accessible and
@@ -98,112 +103,109 @@ const ConnectedNetworkSection = () => {
 
           <Box
             sx={{
-              mt: { xs: 4, md: 5 },
-              display: "grid",
-              gap: { xs: 1.5, md: 0 },
-              gridTemplateColumns: {
-                xs: "1fr",
-                sm: "repeat(2, minmax(0, 1fr))",
-                md: "repeat(3, minmax(0, 1fr))",
-                lg: "repeat(6, minmax(0, 1fr))",
-              },
+              position: "relative",
+              mt: { xs: 3.5, md: 4.5 },
             }}
           >
-            {networkItems.map((item, index) => (
-              <Box
-                key={item.title}
-                sx={{
-                  position: "relative",
-                  px: { xs: 1.2, sm: 1.4, lg: 1.1 },
-                  py: { xs: 2, sm: 2.2, lg: 1.4 },
-                  textAlign: "center",
-                }}
-              >
+            <Box
+              sx={{
+                display: { xs: "none", lg: "block" },
+                position: "absolute",
+                left: "8%",
+                right: "8%",
+                top: 24,
+                borderTop: "1px solid rgba(126, 138, 152, 0.22)",
+              }}
+            />
+
+            <Box
+              sx={{
+                display: "grid",
+                gap: { xs: 2.2, sm: 2, md: 2.5, lg: 0 },
+                gridTemplateColumns: {
+                  xs: "repeat(2, minmax(0, 1fr))",
+                  md: "repeat(3, minmax(0, 1fr))",
+                  lg: "repeat(6, minmax(0, 1fr))",
+                },
+              }}
+            >
+              {networkItems.map(({ icon: Icon, title, description }) => (
                 <Box
+                  key={title}
                   sx={{
-                    width: 58,
-                    height: 58,
-                    mx: "auto",
-                    borderRadius: "50%",
-                    display: "grid",
-                    placeItems: "center",
-                    bgcolor: colors.white,
-                    border: `1px solid rgba(15, 157, 138, 0.12)`,
-                    boxShadow: "0 14px 28px rgba(15, 23, 42, 0.08)",
-                    color: colors.primaryDark,
+                    position: "relative",
+                    px: { xs: 0.8, lg: 0.6 },
+                    textAlign: "center",
                   }}
                 >
-                  <PersonalInjuryOutlinedIcon sx={{ fontSize: 28 }} />
-                </Box>
-
-                <Typography
-                  sx={{
-                    mt: 2.1,
-                    color: colors.textPrimary,
-                    fontSize: "1.02rem",
-                    fontWeight: 800,
-                    lineHeight: 1.2,
-                  }}
-                >
-                  {item.title}
-                </Typography>
-
-                <Typography
-                  sx={{
-                    mt: 1,
-                    mx: "auto",
-                    maxWidth: 150,
-                    color: colors.textSecondary,
-                    fontSize: "0.84rem",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {item.description}
-                </Typography>
-
-                {index < networkItems.length - 1 && (
                   <Box
                     sx={{
-                      display: { xs: "none", lg: "flex" },
-                      alignItems: "center",
-                      position: "absolute",
-                      top: 30,
-                      left: "calc(100% - 12px)",
-                      width: 38,
-                      zIndex: 0,
-                      color: "#B8C1CB",
+                      width: 48,
+                      height: 48,
+                      mx: "auto",
+                      borderRadius: "50%",
+                      display: "grid",
+                      placeItems: "center",
+                      bgcolor: colors.white,
+                      border: `1px solid rgba(15, 157, 138, 0.14)`,
+                      boxShadow: "0 8px 18px rgba(15, 23, 42, 0.05)",
+                      color: colors.primaryDark,
                     }}
                   >
-                    <Box
-                      sx={{
-                        flex: 1,
-                        borderTop: "1px dashed rgba(126, 138, 152, 0.45)",
-                      }}
-                    />
-                    <EastRoundedIcon sx={{ fontSize: 14, ml: 0.5 }} />
+                    <Icon sx={{ fontSize: 22 }} />
                   </Box>
-                )}
-              </Box>
-            ))}
+
+                  <Typography
+                    sx={{
+                      mt: 1.35,
+                      color: colors.textPrimary,
+                      fontSize: "0.88rem",
+                      fontWeight: 800,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {title}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      mt: 0.55,
+                      mx: "auto",
+                      maxWidth: 136,
+                      color: colors.textSecondary,
+                      fontSize: "0.72rem",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {description}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
           </Box>
 
-          <Box sx={{ mt: { xs: 4.5, md: 5.5 }, display: "flex", justifyContent: "center" }}>
+          <Box sx={{ mt: { xs: 3.6, md: 4.2 }, display: "flex", justifyContent: "center" }}>
             <Button
               variant="contained"
               sx={{
-                minHeight: 56,
-                px: 3.25,
-                borderRadius: "14px",
+                minHeight: 40,
+                px: 2.2,
+                borderRadius: "10px",
                 bgcolor: colors.primary,
+                fontSize: "0.8rem",
+                fontWeight: 700,
+                textTransform: "none",
+                boxShadow: "none",
                 "&:hover": {
                   bgcolor: colors.primaryDark,
+                  boxShadow: "none",
                 },
               }}
             >
               Explore Ecosystem
             </Button>
           </Box>
-        </Paper>
+        </Box>
       </Container>
     </Box>
   );

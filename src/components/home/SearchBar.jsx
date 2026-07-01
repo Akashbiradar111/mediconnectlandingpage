@@ -14,72 +14,76 @@ const popularSearches = [
 
 const SearchBar = () => {
   return (
-    <Box component="section" sx={{ pt: { xs: 1.5, md: 2.5 }, pb: { xs: 4, md: 5 } }}>
+    <Box component="section" sx={{ pt: { xs: 1.5, md: 2 }, pb: { xs: 4, md: 4.5 } }}>
       <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
         <Paper
           elevation={0}
           sx={{
             overflow: "hidden",
-            borderRadius: { xs: "24px", md: "28px" },
+            borderRadius: "14px",
             border: `1px solid ${colors.border}`,
             bgcolor: colors.white,
-            boxShadow: colors.shadow,
+            boxShadow: "none",
             animation: "fadeUp 900ms ease both",
           }}
         >
           <Box
             sx={{
-              p: { xs: 1.25, md: 1.5 },
+              p: 0.75,
               display: "grid",
-              gap: 1.5,
+              gap: 0,
               gridTemplateColumns: {
                 xs: "1fr",
-                md: "220px minmax(0, 1fr) 150px",
+                md: "190px minmax(0, 1fr) 118px",
               },
             }}
           >
-            <Button
-              variant="outlined"
+            <Box
               sx={{
-                minHeight: 62,
+                minHeight: 54,
+                display: "flex",
+                alignItems: "center",
                 justifyContent: "space-between",
-                px: 2,
-                borderRadius: "18px",
-                borderColor: colors.border,
-                color: colors.textPrimary,
-                bgcolor: colors.white,
-                "&:hover": {
-                  borderColor: colors.primary,
-                  bgcolor: colors.primaryLight,
-                },
+                gap: 1,
+                px: 1.4,
+                borderRadius: "10px",
+                borderRight: { md: `1px solid ${colors.border}` },
+                borderBottom: { xs: `1px solid ${colors.border}`, md: "none" },
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1.1 }}>
-                <LocationOnOutlinedIcon sx={{ color: colors.textMuted }} />
-                Select Location
+                <LocationOnOutlinedIcon sx={{ color: colors.textMuted, fontSize: 18 }} />
+                <Typography
+                  sx={{
+                    fontSize: "0.82rem",
+                    fontWeight: 600,
+                    color: colors.textSecondary,
+                  }}
+                >
+                  Select Location
+                </Typography>
               </Box>
-              <KeyboardArrowDownRoundedIcon sx={{ color: colors.textMuted }} />
-            </Button>
+              <KeyboardArrowDownRoundedIcon sx={{ color: colors.textMuted, fontSize: 18 }} />
+            </Box>
 
             <Box
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 1.25,
-                minHeight: 62,
-                px: 2.1,
-                borderRadius: "18px",
-                border: `1px solid ${colors.border}`,
+                gap: 1,
+                minHeight: 54,
+                px: { xs: 1.4, md: 1.8 },
                 bgcolor: colors.white,
+                borderBottom: { xs: `1px solid ${colors.border}`, md: "none" },
               }}
             >
-              <SearchRoundedIcon sx={{ color: colors.textMuted }} />
+              <SearchRoundedIcon sx={{ color: colors.textMuted, fontSize: 18 }} />
               <InputBase
                 fullWidth
                 placeholder="Search Doctors, Specialties, Clinics and Hospitals..."
                 sx={{
                   color: colors.textPrimary,
-                  fontSize: "0.97rem",
+                  fontSize: "0.82rem",
                 }}
               />
             </Box>
@@ -87,11 +91,19 @@ const SearchBar = () => {
             <Button
               variant="contained"
               sx={{
-                minHeight: 62,
-                borderRadius: "18px",
+                minHeight: 40,
+                alignSelf: "center",
+                mx: { xs: 1, md: 0.75 },
+                my: { xs: 1, md: 0 },
+                borderRadius: "10px",
                 bgcolor: colors.primary,
+                fontSize: "0.82rem",
+                fontWeight: 700,
+                textTransform: "none",
+                boxShadow: "none",
                 "&:hover": {
                   bgcolor: colors.primaryDark,
+                  boxShadow: "none",
                 },
               }}
             >
@@ -101,18 +113,17 @@ const SearchBar = () => {
 
           <Box
             sx={{
-              borderTop: `1px solid ${colors.border}`,
-              px: { xs: 1.25, md: 1.5 },
-              py: { xs: 1.25, md: 1.1 },
+              px: 0.1,
+              pt: 1.2,
               display: "flex",
               flexWrap: "wrap",
               alignItems: "center",
-              gap: 1.1,
+              gap: 0.7,
             }}
           >
             <Typography
               sx={{
-                fontSize: "0.92rem",
+                fontSize: "0.78rem",
                 fontWeight: 700,
                 color: colors.textPrimary,
               }}
@@ -124,13 +135,13 @@ const SearchBar = () => {
               <Box
                 key={item}
                 sx={{
-                  px: 1.35,
-                  py: 0.75,
+                  px: 1.1,
+                  py: 0.48,
                   borderRadius: "999px",
                   border: `1px solid ${colors.border}`,
-                  bgcolor: "#FAFCFC",
+                  bgcolor: colors.white,
                   color: colors.textSecondary,
-                  fontSize: "0.82rem",
+                  fontSize: "0.72rem",
                   fontWeight: 600,
                   lineHeight: 1,
                 }}

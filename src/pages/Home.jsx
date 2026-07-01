@@ -10,8 +10,7 @@ const Home = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top left, rgba(15, 157, 138, 0.08), transparent 24%), linear-gradient(180deg, #ffffff 0%, #fbfffe 42%, #f4fbf9 100%)",
+        background: "#ffffff",
       }}
     >
       <Navbar />
