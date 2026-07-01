@@ -46,7 +46,7 @@ const floatingCards = [
     title: "Find Doctors",
     subtitle: "Verified specialists",
     sx: {
-      left: { xs: "2%", sm: "-1%", md: "-4%" },
+      left: { xs: "2%", sm: "4%", md: "6%", lg: "4%" },
       top: { xs: "2%", sm: "10%", md: "16%" },
       animationDelay: "180ms",
     },
@@ -152,7 +152,7 @@ const FloatingCard = ({ icon: Icon, title, subtitle, sx }) => (
 const Hero = () => {
   return (
     <Box component="section" sx={{ pt: { xs: 2.5, md: 3.5 }, pb: { xs: 2, md: 2.5 } }}>
-      <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
+      <Container maxWidth={false} sx={{ width: "min(1440px, calc(100% - 32px))" }}>
         <Box
           sx={{
             position: "relative",
@@ -180,10 +180,17 @@ const Hero = () => {
               display: "grid",
               alignItems: "center",
               gap: { xs: 4.5, lg: 1.5 },
-              gridTemplateColumns: { xs: "1fr", lg: "minmax(0, 0.96fr) minmax(0, 1.04fr)" },
+              gridTemplateColumns: { xs: "1fr", lg: "504px minmax(0, 1fr)" },
             }}
           >
-            <Box sx={{ position: "relative", zIndex: 2, animation: "fadeUp 700ms ease both" }}>
+            <Box
+              sx={{
+                position: "relative",
+                zIndex: 2,
+                maxWidth: { lg: 504 },
+                animation: "fadeUp 700ms ease both",
+              }}
+            >
               <Box
                 sx={{
                   display: "inline-flex",
@@ -207,27 +214,43 @@ const Hero = () => {
                 component="h1"
                 sx={{
                   mt: 2.1,
-                  maxWidth: 560,
-                  fontSize: { xs: "2.35rem", sm: "3.2rem", lg: "3.72rem" },
-                  lineHeight: { xs: 1.08, lg: 1.1 },
-                  letterSpacing: "-0.04em",
+                  maxWidth: { xs: "100%", lg: 504 },
+                  fontSize: { xs: "2.7rem", sm: "3.45rem", lg: "3.78rem" },
+                  lineHeight: { xs: 1.05, lg: 1.12 },
+                  letterSpacing: "-0.045em",
                   fontWeight: 800,
                   color: colors.textPrimary,
                 }}
               >
-                One Platform for the Entire{" "}
-                <Box component="span" sx={{ color: colors.primary }}>
-                  Healthcare
-                </Box>{" "}
-                Ecosystem
+                <Box
+                  component="span"
+                  sx={{ display: "block", whiteSpace: { xs: "normal", md: "nowrap" } }}
+                >
+                  One Platform for the
+                </Box>
+                <Box
+                  component="span"
+                  sx={{ display: "block", whiteSpace: { xs: "normal", md: "nowrap" } }}
+                >
+                  Entire{" "}
+                  <Box component="span" sx={{ color: colors.primary }}>
+                    Healthcare
+                  </Box>
+                </Box>
+                <Box
+                  component="span"
+                  sx={{ display: "block", whiteSpace: { xs: "normal", md: "nowrap" } }}
+                >
+                  Ecosystem
+                </Box>
               </Typography>
 
               <Typography
                 sx={{
                   mt: 1.8,
-                  maxWidth: 500,
+                  maxWidth: { xs: "100%", lg: 504 },
                   fontSize: { xs: "0.95rem", md: "1rem" },
-                  lineHeight: 1.8,
+                  lineHeight: 1.7,
                   color: colors.textSecondary,
                 }}
               >
@@ -315,7 +338,7 @@ const Hero = () => {
                 minHeight: { xs: 300, sm: 380, lg: 470 },
                 display: "flex",
                 alignItems: "flex-end",
-                justifyContent: "center",
+                justifyContent: { xs: "center", lg: "flex-end" },
                 animation: "fadeUp 820ms ease both",
               }}
             >
@@ -349,7 +372,7 @@ const Hero = () => {
                 alt="Doctor consulting an elderly patient"
                 sx={{
                   width: "100%",
-                  maxWidth: { xs: 320, sm: 390, md: 470, lg: 530 },
+                  maxWidth: { xs: 320, sm: 390, md: 470, lg: 620 },
                   height: "auto",
                   position: "relative",
                   zIndex: 2,

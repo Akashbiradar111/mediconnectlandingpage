@@ -15,7 +15,7 @@ const popularSearches = [
 const SearchBar = () => {
   return (
     <Box component="section" sx={{ pt: { xs: 1.5, md: 2 }, pb: { xs: 4, md: 4.5 } }}>
-      <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
+      <Container maxWidth={false} sx={{ width: "min(1440px, calc(100% - 32px))" }}>
         <Paper
           elevation={0}
           sx={{

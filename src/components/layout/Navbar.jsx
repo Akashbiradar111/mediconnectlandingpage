@@ -22,7 +22,7 @@ import colors from "../../constants/colors";
 import navLinks from "../../data/navLinks";
 
 const pageWidthSx = {
-  width: "min(1140px, calc(100% - 32px))",
+  width: "min(1440px, calc(100% - 32px))",
 };
 
 const actionButtonSx = {

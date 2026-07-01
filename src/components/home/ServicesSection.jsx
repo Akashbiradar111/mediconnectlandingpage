@@ -50,7 +50,7 @@ const serviceCards = [
 const ServicesSection = () => {
   return (
     <Box component="section" sx={{ pb: { xs: 7, md: 8.5 } }}>
-      <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
+      <Container maxWidth={false} sx={{ width: "min(1440px, calc(100% - 32px))" }}>
         <Typography
           sx={{
             color: colors.primaryDark,

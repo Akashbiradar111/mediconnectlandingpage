@@ -48,7 +48,7 @@ const networkItems = [
 const ConnectedNetworkSection = () => {
   return (
     <Box component="section" sx={{ pb: { xs: 6, md: 7 } }}>
-      <Container maxWidth={false} sx={{ width: "min(1140px, calc(100% - 32px))" }}>
+      <Container maxWidth={false} sx={{ width: "min(1440px, calc(100% - 32px))" }}>
         <Box
           sx={{
             position: "relative",
