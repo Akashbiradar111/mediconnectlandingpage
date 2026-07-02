@@ -222,7 +222,7 @@ const Navbar = () => {
       </AppBar>
 
       <Drawer
-        anchor="right"
+        anchor="left"
         open={mobileOpen}
         onClose={toggleDrawer}
         PaperProps={{
