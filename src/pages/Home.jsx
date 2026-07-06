@@ -3,6 +3,8 @@ import Hero from "../components/home/Hero";
 import SearchBar from "../components/home/SearchBar";
 import ServicesSection from "../components/home/ServicesSection";
 import ConnectedNetworkSection from "../components/home/ConnectedNetworkSection";
+import WhyChooseUsSection from "../components/home/WhyChooseUsSection";
+import HealthCtaSection from "../components/home/HealthCtaSection";
 import { Box } from "@mui/material";
 
 const Home = () => {
@@ -18,6 +20,8 @@ const Home = () => {
       <SearchBar />
       <ServicesSection />
       <ConnectedNetworkSection />
+      <WhyChooseUsSection />
+      <HealthCtaSection />
     </Box>
   );
 };
