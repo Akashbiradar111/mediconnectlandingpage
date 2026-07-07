@@ -5,6 +5,7 @@ import ServicesSection from "../components/home/ServicesSection";
 import ConnectedNetworkSection from "../components/home/ConnectedNetworkSection";
 import WhyChooseUsSection from "../components/home/WhyChooseUsSection";
 import HealthCtaSection from "../components/home/HealthCtaSection";
+import Footer from "../components/layout/Footer";
 import { Box } from "@mui/material";
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
       <ConnectedNetworkSection />
       <WhyChooseUsSection />
       <HealthCtaSection />
+      <Footer />
     </Box>
   );
 };
