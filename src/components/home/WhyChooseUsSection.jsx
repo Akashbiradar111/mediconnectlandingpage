@@ -62,6 +62,17 @@ const stats = [
   { value: "99.9%", label: "Platform Availability" },
 ];
 
+const featureIconWrapSx = {
+  width: 38,
+  height: 38,
+  borderRadius: "8px",
+  display: "grid",
+  placeItems: "center",
+  bgcolor: colors.primaryLight,
+  color: colors.primaryDark,
+  border: "1px solid rgba(15, 157, 138, 0.12)",
+};
+
 const iconWrapSx = {
   width: 44,
   height: 44,
@@ -133,7 +144,10 @@ const WhyChooseUsSection = () => {
               <Box
                 sx={{
                   mb: 1.8,
+                  width: 237,
+                  maxWidth: "100%",
                   height: 210,
+                  mx: "auto",
                   display: "grid",
                   placeItems: "center",
                 }}
@@ -143,15 +157,16 @@ const WhyChooseUsSection = () => {
                   src={image}
                   alt={title}
                   sx={{
-                    width: "100%",
-                    height: "100%",
+                    width: 237,
+                    maxWidth: "100%",
+                    height: 210,
                     objectFit: "contain",
                   }}
                 />
               </Box>
 
-              <Box sx={iconWrapSx}>
-                <Icon icon={icon} width={22} height={22} />
+              <Box sx={featureIconWrapSx}>
+                <Icon icon={icon} width={20} height={20} />
               </Box>
 
               <Typography
