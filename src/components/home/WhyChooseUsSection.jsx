@@ -53,7 +53,6 @@ const featureCards = [
       "Ongoing patient support",
     ],
   },
-  
 ];
 
 const stats = [
